@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licht.Blick.Moment - Arbeitsweise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #FFFFFF;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: #31453C;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1.2em;
+            position: relative;
+            z-index: 1000;
+        }
+        .header h1 {
+            font-family: 'Mrs Saint Delafield', serif;
+            font-size: 4em;
+            margin-bottom: 0;
+        }
+        .header p {
+            font-size: 1em;
+            margin-top: 0;
+            line-height: 1.2em;
+        }
+        .hero {
+            background: url('/Users/katja/Desktop/Website/Bilder für Website/ich august erste bearbeitung 5-3-fotor-20240912141759.webp') no-repeat center center/cover;
+            height: 100vh;
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .hero img {
+            display: none;
+        }
+        .hero h1 {
+            font-family: 'Mrs Saint Delafield', serif;
+            font-size: 4em;
+            color: #000000;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            max-width: 80%;
+            line-height: 1.4em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5em;
+            color: #FFFFFF;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            max-width: 80%;
+            line-height: 1.4em;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .timer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #31453C;
+        }
+        .section {
+            padding: 20px;
+            color: #31453C;
+            margin: 0 auto;
+            max-width: 800px;
+            padding-right: 240px;
+            box-sizing: border-box;
+        }
+        .section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3em;
+        }
+        .section-content p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #31453C;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 220px;
+            background-color: #31453C;
+            color: #FFFFFF;
+            height: 100vh;
+            padding-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1000;
+        }
+        .sidebar img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 40px 0;
+        }
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 15px 0;
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            z-index: 1100;
+            padding: 5px;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .hidden {
+            display: none;
+        }
+        .kurz-und-buendig {
+            background-color: #31453C;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 1.5em;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .kurz-und-buendig h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-family: 'Mrs Saint Delafield', serif;
+            font-size: 2.5em;
+            font-weight: 100;
+        }
+        .kurz-und-buendig ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .kurz-und-buendig li {
+            margin-bottom: 10px;
+        }
+        .photo-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+        }
+        .photo-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .footer {
+            background-color: #31453C;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .footer a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .instagram-button, .facebook-link {
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            max-width: fit-content;
+        }
+        .instagram-button {
+            background-color: #a27912;
+        }
+        .facebook-link {
+            background-color: transparent;
+            color: #FFFFFF;
+        }
+        .instagram-button i, .facebook-link i {
+            margin-right: 10px;
+        }
+        .facebook-link i {
+            font-size: 1.5em;
+        }
+        .copyright {
+            font-size: 1em;
+            margin-top: 10px;
+            color: #FFFFFF;
+        }
+        .book-appointment-button {
+            background-color: #31453C;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 20px 0;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+        .moment-counts {
+            font-family: 'Mrs Saint Delafield', serif;
+            font-size: 2.5em; /* Etwas größer */
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Licht.Blick.Moment</h1>
+        <p>Die Kunst, den Augenblick einzufangen.</p>
+    </header>
+
+  
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <img src="https://live.staticflickr.com/65535/54018002056_20964ebc8e_k.jpg" alt="Profilbild" />
+        <nav>
+            <a href="index.html">Startseite</a>
+            <a href="ueber-mich.html">Über Mich</a>
+            <a href="arbeitsweise.html">Meine Arbeitsweise</a>
+            <a href="portfolio.html">Mein Portfolio</a>
+            <a href="angebote-preise.html">Preise und Angebote</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </aside>
+
+    <!-- Arbeitsweise Section -->
+    <section id="workflow" class="section">
+        <h2>Meine Arbeitsweise</h2>
+        <p>Ich weiß, dass es für die Meisten ungewohnt ist, vor der Kamera zu stehen. Mein Ziel ist es, dass du dich während unseres Shootings wohl und entspannt fühlst. Dazu nehmen wir uns die nötige Zeit, um uns kennenzulernen und deine Wünsche und Vorstellungen zu besprechen.</p>
+        <p>Während des Shootings werde ich dich behutsam durch verschiedene Posen führen, die zu dir passen und deine Persönlichkeit unterstreichen. Dabei stehe ich dir jederzeit zur Seite und gebe dir einfache, klare Anweisungen, damit du dich sicher fühlst.</p>
+        <p>Es geht nicht darum, perfekt zu sein, sondern darum, den Moment einzufangen, der dich so zeigt, wie du bist - authentisch und echt.</p>
+        <p>Die schönsten Fotos entstehen im Augenblick, deswegen lege ich Wert darauf, ohne Zeitdruck zu arbeiten und dich auf einen gemütlichen Spaziergang einzuladen.</p>
+        <p>Es ist mir wichtig, dass du Spaß hast und das Shooting als positives Erlebnis in Erinnerung behältst. Deine Zufriedenheit und dein Komfort stehen an erster Stelle. Lass uns gemeinsam Bilder schaffen, die deine schönsten Seiten hervorheben und Erinnerungen festhalten, die du gerne teilst.</p>
+
+        <!-- Kurz und Bündig -->
+        <div class="kurz-und-buendig">
+            <h3>Kurz und Bündig</h3>
+            <ul>
+                <li>Kennenlernen & Besprechung eurer Wünsche</li>
+                <li>Natürliche Posen & echtes Lachen</li>
+                <li>Entspannte Atmosphäre</li>
+                <li>Spaß ohne Zeitdruck</li>
+                <li>Stimmige Bildbearbeitung</li>
+                <li>Nach dem Motto: Lache, Tanze, Weine</li>
+            </ul>
+        </div>
+
+        <p>Fotografie ist für mich weit mehr als nur ein Beruf — es ist eine lebendige Leidenschaft, die mein Herz erfüllt. Meine Reise begann in der Natur, wo ich die Schönheit und Vielfalt unserer Umgebung für mich entdeckte.</p>
+        <p>Mit der Zeit fand ich meine Leidenschaft in der Portraitfotografie. Hier kann ich Menschen, Tiere und besondere Momente in ihrer ganzen Pracht einfangen. Jedes Bild, das ich aufnehme, erzählt eine Geschichte von Individualismus, Liebe, und der Magie des Lebens.</p>
+        <p>Mein Ziel ist es, nicht nur Fotos zu machen, sondern lebendige Erinnerungen zu schaffen, die ein Leben lang bewahrt werden. Mit einem ausgeprägten Blick für Details und einer tiefen Verbundenheit zur Natur entstehen Aufnahmen, die die Schönheit unserer Welt und deine Persönlichkeit in all ihren Facetten einfangen.</p>
+        <p>Ob Einzelportraits, Familien, Paare, Neugeborene oder unsere treuen Vierbeiner - jedes Fotoshooting ist eine gemeinsame Reise voller Entdeckungen. Ich freue mich darauf, dich mit meiner Kamera zu begleiten und deine einzigartige Geschichte festzuhalten.</p>
+
+        <!-- Neuer Satz "Jeder Moment zählt" -->
+        <div class="moment-counts">Jeder Moment zählt</div>
+
+        <!-- Jetzt Termin Buchen Button -->
+        <a href="kontakt.html" class="book-appointment-button">Jetzt Termin Buchen</a>
+
+        <!-- Photo Container -->
+        <div class="photo-container">
+            <img src="https://live.staticflickr.com/65535/54018226213_1a751f735d_z.jpg" alt="thaya">
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>Kontakt: <a href="mailto:lichtblickmoment@gmail.com">lichtblickmoment@gmail.com</a></p>
+        <a href="https://www.instagram.com/Licht.blick.moment/" class="instagram-button" target="_blank"><i class="fab fa-instagram"></i> Folge mir auf Instagram</a>
+        <a href="https://www.facebook.com/lichtblickmoment/" class="facebook-link" target="_blank"><i class="fab fa-facebook"></i> und Facebook</a>
+        <p class="copyright">© 2024 Licht.Blick.Moment. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>

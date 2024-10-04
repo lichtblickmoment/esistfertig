@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licht.Blick.Moment - Portraits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #FFFFFF;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: #31453C;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .header h1 {
+            font-family: 'Mrs Saint Delafield', serif;
+            font-size: 4em;
+            margin-bottom: 0;
+        }
+        .section {
+            padding: 20px;
+            color: #31453C;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        .button, .instagram-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #31453C;
+            text-decoration: none;
+            border: 2px solid #31453C;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+        }
+        .button:hover, .instagram-button:hover {
+            background-color: #31453C;
+            color: #FFFFFF;
+        }
+        .instagram-button {
+            background-color: #D3A84A;
+            border-color: #D3A84A;
+            color: #31453C;
+        }
+        .instagram-button:hover {
+            background-color: #c19a3b;
+            color: #FFFFFF;
+        }
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .overlay.active {
+            display: flex;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+        .arrow.left {
+            left: 30px;
+        }
+        .arrow.right {
+            right: 30px;
+        }
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 220px;
+            background-color: #31453C;
+            color: #FFFFFF;
+            height: 100vh;
+            padding-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 40px 0;
+        }
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 1.2em;
+            padding: 5px;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Licht.Blick.Moment</h1>
+        <p>deine Geschichte - unsere Kunst</p>
+    </header>
+
+    <aside class="sidebar">
+        <img src="https://live.staticflickr.com/65535/54018002056_20964ebc8e_k.jpg" alt="Profilbild" />
+        <nav>
+            <a href="index.html">Startseite</a>
+            <a href="ueber-mich.html">Über Mich</a>
+            <a href="arbeitsweise.html">Meine Arbeitsweise</a>
+            <a href="portfolio.html">Mein Portfolio</a>
+            <a href="angebote-preise.html">Preise und Angebote</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </aside>
+
+    <!-- Portraits Section -->
+    <section id="Vierbeiner" class="section">
+        <!-- Zurück zum Portfolio Button oben -->
+        <div style="text-align: center;">
+            <a href="portfolio.html" class="button">Zurück zum Portfolio</a>
+        </div>
+
+        <div class="gallery-container">
+            <div class="gallery">
+                <a href="javascript:void(0);" onclick="showOverlay(0)"><img src="https://live.staticflickr.com/65535/54042004010_c9cb7558bb_z.jpg" alt="Belle Herbst 1"></a>
+                <a href="javascript:void(0);" onclick="showOverlay(1)"><img src="https://live.staticflickr.com/65535/54041809543_0caace9584_z.jpg" alt="Belle Herbst 2"></a>
+                <a href="javascript:void(0);" onclick="showOverlay(2)"><img src="https://live.staticflickr.com/65535/54041806793_00ae10a390_z.jpg" alt="Filou Wiese"></a>
+                <a href="javascript:void(0);" onclick="showOverlay(3)"><img src="https://live.staticflickr.com/65535/54040691692_8f64476492_z.jpg" alt="Filou Herbst"></a>
+                <a href="javascript:void(0);" onclick="showOverlay(4)"><img src="https://live.staticflickr.com/65535/54041807588_b4e083fb45_z.jpg" alt="Hanni 1"></a>
+                <a href="javascript:void(0);" onclick="showOverlay(5)"><img src="https://live.staticflickr.com/65535/54040691062_a3d31c661d_z.jpg" alt="Hanni 2"></a>
+                <a href="javascript:void(0);" onclick="showOverlay(6)"><img src="https://live.staticflickr.com/65535/54040692522_e0d4924d23_z.jpg" alt="Belli grün"></a>
+                <a href="javascript:void(0);" onclick="showOverlay(7)"><img src="https://live.staticflickr.com/65535/54041559001_2baf9998d1_z.jpg" alt="Cat Malay"></a>
+            </div>
+        </div>
+
+        <!-- Overlay für große Ansicht -->
+        <div class="overlay" id="overlay">
+            <span class="close" onclick="hideOverlay()">&times;</span>
+            <span class="arrow left" onclick="prevImage()">&#10094;</span>
+            <span class="arrow right" onclick="nextImage()">&#10095;</span>
+            <img id="overlay-image" src="" alt="Large view">
+        </div>
+
+        <!-- Buttons unten -->
+        <div style="text-align: center;">
+            <a href="portfolio.html" class="button">Zurück zum Portfolio</a><br>
+            <a href="https://www.instagram.com/Licht.blick.moment/" class="instagram-button" target="_blank">Noch mehr Bilder findest du HIER auf meinem Instagram Account</a>
+        </div>
+    </section>
+
+    <script>
+        const images = [
+            "https://live.staticflickr.com/65535/54042004010_c9cb7558bb_z.jpg",
+            "https://live.staticflickr.com/65535/54041809543_0caace9584_z.jpg",
+            "https://live.staticflickr.com/65535/54041806793_00ae10a390_z.jpg",
+            "https://live.staticflickr.com/65535/54040691692_8f64476492_z.jpg",
+            "https://live.staticflickr.com/65535/54041807588_b4e083fb45_z.jpg",
+            "https://live.staticflickr.com/65535/54040691062_a3d31c661d_z.jpg",
+            "https://live.staticflickr.com/65535/54040692522_e0d4924d23_z.jpg",
+            "https://live.staticflickr.com/65535/54041559001_2baf9998d1_z.jpg"
+        ];
+        let currentIndex = 0;
+
+        function showOverlay(index) {
+            const overlay = document.getElementById('overlay');
+            const overlayImage = document.getElementById('overlay-image');
+            currentIndex = index;
+            overlayImage.src = images[currentIndex];
+            overlay.classList.add('active');
+
+            // Event Listener für Tastatur
+            document.addEventListener('keydown', handleKeyPress);
+        }
+
+        function hideOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.classList.remove('active');
+
+            // Event Listener entfernen
+            document.removeEventListener('keydown', handleKeyPress);
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'ArrowRight') {
+                nextImage();
+            } else if (event.key === 'ArrowLeft') {
+                prevImage();
+            } else if (event.key === 'Escape') {
+                hideOverlay();
+            }
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        }
+
+        function updateImage() {
+            const overlayImage = document.getElementById('overlay-image');
+            overlayImage.src = images[currentIndex];
+        }
+
+        // Schließt das Overlay, wenn der Benutzer außerhalb des Bildes klickt
+        window.onclick = function(event) {
+            const overlay = document.getElementById('overlay');
+            if (event.target === overlay) {
+                hideOverlay();
+            }
+        }
+    </script>
+</body>
+</html>

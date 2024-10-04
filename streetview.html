@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licht.Blick.Moment - Portraits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #FFFFFF;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: #31453C;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .header h1 {
+            font-family: 'Mrs Saint Delafield', serif;
+            font-size: 4em;
+            margin-bottom: 0;
+        }
+        .section {
+            padding: 20px;
+            color: #31453C;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        .button, .instagram-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #31453C;
+            text-decoration: none;
+            border: 2px solid #31453C;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+        }
+        .button:hover, .instagram-button:hover {
+            background-color: #31453C;
+            color: #FFFFFF;
+        }
+        .instagram-button {
+            background-color: #D3A84A;
+            border-color: #D3A84A;
+            color: #31453C;
+        }
+        .instagram-button:hover {
+            background-color: #c19a3b;
+            color: #FFFFFF;
+        }
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .overlay.active {
+            display: flex;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 220px;
+            background-color: #31453C;
+            color: #FFFFFF;
+            height: 100vh;
+            padding-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 40px 0;
+        }
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 1.2em;
+            padding: 5px;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Licht.Blick.Moment</h1>
+        <p>deine Geschichte - unsere Kunst</p>
+    </header>
+
+    <aside class="sidebar">
+        <img src="https://live.staticflickr.com/65535/54018002056_20964ebc8e_k.jpg" alt="Profilbild" />
+        <nav>
+            <a href="index.html">Startseite</a>
+            <a href="ueber-mich.html">Über Mich</a>
+            <a href="arbeitsweise.html">Meine Arbeitsweise</a>
+            <a href="portfolio.html">Mein Portfolio</a>
+            <a href="angebote-preise.html">Preise und Angebote</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </aside>
+
+    <!-- Portraits Section -->
+    <section id="Vierbeiner" class="section">
+        <!-- Zurück zum Portfolio Button oben -->
+        <div style="text-align: center;">
+            <a href="portfolio.html" class="button">Zurück zum Portfolio</a>
+        </div>
+
+        <div class="gallery-container">
+            <div class="gallery">
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027427760_6f6aa8633e_z.jpg')"><img src="https://live.staticflickr.com/65535/54027427760_6f6aa8633e_z.jpg" alt="girl1"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027230348_8b29c32086_z.jpg')"><img src="https://live.staticflickr.com/65535/54027230348_8b29c32086_z.jpg" alt="Bangkok 1"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027428070_2bc97fc2a4_z.jpg')"><img src="https://live.staticflickr.com/65535/54027428070_2bc97fc2a4_z.jpg" alt="girls2"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026984981_26ab853b11_z.jpg')"><img src="https://live.staticflickr.com/65535/54026984981_26ab853b11_z.jpg" alt="verkäuferin1"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026983216_9df0f1eec6_z.jpg')"><img src="https://live.staticflickr.com/65535/54026983216_9df0f1eec6_z.jpg" alt="Brücke1"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027231973_bb4c81141d_z.jpg')"><img src="https://live.staticflickr.com/65535/54027231973_bb4c81141d_z.jpg" alt="brücke2"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027314704_89c3a73875_z.jpg')"><img src="https://live.staticflickr.com/65535/54027314704_89c3a73875_z.jpg" alt="gitter"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026094487_5e4156fa01_z.jpg')"><img src="https://live.staticflickr.com/65535/54026094487_5e4156fa01_z.jpg" alt="huhn"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026983481_33526ac4a7_z.jpg')"><img src="https://live.staticflickr.com/65535/54026983481_33526ac4a7_z.jpg" alt="markt"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026983221_272e3b36c7_z.jpg')"><img src="https://live.staticflickr.com/65535/54026983221_272e3b36c7_z.jpg" alt="bangkok typ"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027315559_a7d5851a44_z.jpg')"><img src="https://live.staticflickr.com/65535/54027315559_a7d5851a44_z.jpg" alt="matrratzetransport"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026985226_08032377aa_z.jpg')"><img src="https://live.staticflickr.com/65535/54026985226_08032377aa_z.jpg" alt="werkstatt"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026095892_aa25c5365d.jpg')"><img src="https://live.staticflickr.com/65535/54026095892_aa25c5365d_z.jpg" alt="zeitung"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027429340_1251977e6d_z.jpg')"><img src="https://live.staticflickr.com/65535/54027429340_1251977e6d_z.jpg" alt="hochzeit"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027231453_41b92ebcce_z.jpg')"><img src="https://live.staticflickr.com/65535/54027231453_41b92ebcce_z.jpg" alt="tempel 1"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027428595_7f0b380183_z.jpg')"><img src="https://live.staticflickr.com/65535/54027428595_7f0b380183_z.jpg" alt="tempel 2"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026095272_22e18d0a10_z.jpg')"><img src="https://live.staticflickr.com/65535/54026095272_22e18d0a10_z.jpg" alt="straße"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027429065_923c75ae74_z.jpg')"><img src="https://live.staticflickr.com/65535/54027429065_923c75ae74_z.jpg" alt="packerl moped"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027314314_b51d4c4531_z.jpg')"><img src="https://live.staticflickr.com/65535/54027314314_b51d4c4531_z.jpg" alt="junge 1"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026095007_077ab6a5db_z.jpg')"><img src="https://live.staticflickr.com/65535/54026095007_077ab6a5db_z.jpg" alt="junge 2"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027230828_224af5e12b_z.jpg')"><img src="https://live.staticflickr.com/65535/54027230828_224af5e12b_z.jpg" alt="tempel pink"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026984201_df6e78951d_z.jpg')"><img src="https://live.staticflickr.com/65535/54026984201_df6e78951d_z.jpg" alt="moped"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027231568_cef9328793_z.jpg')"><img src="https://live.staticflickr.com/65535/54027231568_cef9328793_z.jpg" alt="restorant"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026095902_b943ec63ea_z.jpg')"><img src="https://live.staticflickr.com/65535/54026095902_b943ec63ea_z.jpg" alt="restorant 2"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026984886_09f86d6bc3_z.jpg')"><img src="https://live.staticflickr.com/65535/54026984886_09f86d6bc3_z.jpg" alt="pink grün"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027315499_83dde2d8c3_z.jpg')"><img src="https://live.staticflickr.com/65535/54027315499_83dde2d8c3_z.jpg" alt="streetfood"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54027428315_25f02b8356_z.jpg')"><img src="https://live.staticflickr.com/65535/54027428315_25f02b8356_z.jpg" alt="umzug"></a>
+                <a href="javascript:void(0);" onclick="showOverlay('https://live.staticflickr.com/65535/54026094777_85beb12ddb_z.jpg')"><img src="https://live.staticflickr.com/65535/54026094777_85beb12ddb_z.jpg" alt="portrait rot"></a>
+            </div>
+        </div>
+        
+        <!-- Buttons unten -->
+        <div style="text-align: center;">
+            <a href="portfolio.html" class="button">Zurück zum Portfolio</a><br>
+            <a href="https://www.instagram.com/Licht.blick.moment/" class="instagram-button" target="_blank">Noch mehr Bilder findest du HIER auf meinem Instagram Account</a>
+        </div>
+    </section>
+
+ <!-- Overlay für die Bilder -->
+    <div id="overlay" class="overlay">
+        <span class="close" onclick="closeOverlay()">&times;</span>
+        <img id="overlay-img" src="" alt="Überblicksbild">
+        <span class="arrow arrow-left" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></span>
+        <span class="arrow arrow-right" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></span>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = [];
+
+        function showOverlay(src) {
+            const overlay = document.getElementById('overlay');
+            const overlayImg = document.getElementById('overlay-img');
+            overlayImg.src = src;
+            overlay.style.display = 'flex';
+
+            // Speichere alle Bilder
+            const galleryImages = document.querySelectorAll('.gallery img');
+            images.length = 0; // Leere das Array
+            galleryImages.forEach((img, index) => {
+                images.push(img.src);
+                if (img.src === src) {
+                    currentImageIndex = index; // Setze den aktuellen Index
+                }
+            });
+        }
+
+        function closeOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = 'none';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1; // Gehe zum letzten Bild
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0; // Gehe zum ersten Bild
+            }
+
+            const overlayImg = document.getElementById('overlay-img');
+            overlayImg.src = images[currentImageIndex];
+        }
+
+        window.onclick = function(event) {
+            const overlay = document.getElementById('overlay');
+            if (event.target === overlay) {
+                closeOverlay();
+            }
+        }
+
+        window.addEventListener('keydown', function(event) {
+            if (document.getElementById('overlay').style.display === 'flex') {
+                if (event.key === 'ArrowLeft') {
+                    changeImage(-1);
+                } else if (event.key === 'ArrowRight') {
+                    changeImage(1);
+                } else if (event.key === 'Escape') {
+                    closeOverlay();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

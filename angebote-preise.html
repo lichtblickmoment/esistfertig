@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licht.Blick.Moment - Angebote und Preise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #FFFFFF;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: #31453C;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1.2em;
+            position: relative;
+            z-index: 1000;
+        }
+        .header h1 {
+            font-family: 'Mrs Saint Delafield', serif;
+            font-size: 4em;
+            margin-bottom: 0;
+        }
+        .header p {
+            font-size: 1em;
+            margin-top: 0;
+            line-height: 1.2em;
+        }
+        .section {
+            padding: 20px;
+            color: #31453C;
+            margin: 0 auto;
+            max-width: 800px;
+            padding-right: 240px;
+            box-sizing: border-box;
+        }
+        .section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3em;
+        }
+        .offers {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .offers li {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 220px;
+            background-color: #31453C;
+            color: #FFFFFF;
+            height: 100vh;
+            padding-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1000;
+        }
+        .sidebar img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 40px 0;
+        }
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 15px 0;
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            z-index: 1100;
+            padding: 5px;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            background-color: #31453C;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .footer a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .current-offer {
+            background-color: rgba(209, 167, 0, 0.3); /* Blasses, durchsichtigeres Senfgelb */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #000000; /* Textfarbe schwarz */
+        }
+        .current-offer h3 {
+            font-family: 'Mrs Saint Delafield', serif; /* Schreibschrift für die Überschrift */
+            font-size: 3em; /* Größere Schriftgröße */
+            font-weight: 400; /* Dünnere Schrift */
+            margin: 0 0 10px;
+            color: #000000; /* Schriftfarbe schwarz für die Überschrift */
+        }
+        .quote {
+            font-family: 'Mrs Saint Delafield', serif;
+            font-size: 3.5em; /* Größere Schriftgröße */
+            font-weight: 400; /* Dünnere Schrift */
+            text-align: center;
+            margin-top: 30px; /* Abstand nach oben */
+        }
+        .button {
+            display: inline-block;
+            background-color: #31453C;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-align: center;
+            margin: 20px auto; /* Zentrieren */
+        }
+        .button:hover {
+            background-color: #2A3D30;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Licht.Blick.Moment</h1>
+        <p>deine Geschichte - unsere Kunst</p>
+    </header>
+
+    <aside class="sidebar">
+        <img src="https://live.staticflickr.com/65535/54018002056_20964ebc8e_k.jpg" alt="Profilbild" />
+        <nav>
+            <a href="index.html">Startseite</a>
+            <a href="ueber-mich.html">Über Mich</a>
+            <a href="arbeitsweise.html">Meine Arbeitsweise</a>
+            <a href="portfolio.html">Mein Portfolio</a>
+            <a href="angebote-preise.html">Preise und Angebote</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </aside>
+
+    <!-- Angebote und Preise Section -->
+    <section id="offers" class="section">
+        <h2>Preise und Angebote</h2>
+        
+        <p>
+        Ich bin kein gewöhnlicher Mensch, und deshalb biete ich auch keine gewöhnlichen Fotoshootings an! Die angegebene Dauer ist nur ein Richtwert – ich fotografiere so lange, bis die Magie geschieht und natürliche, wunderschöne Momente festgehalten werden. 
+        </p>
+
+        <p>
+        Nach unserem Shooting dürft ihr euch auf alle Originalfotos freuen sowie auf die bearbeiteten Highlights, die ich für besonders gelungen halte. Das können 4, 8, 12 oder sogar mehr Bilder sein – der Schönheit und Kreativität setze ich keine Grenzen. 
+        </p>
+
+        <p>
+        Lasst uns gemeinsam etwas Einzigartiges erschaffen! Hier sind meine Angebote für euch:
+        </p>
+
+        <!-- Aktuelles Angebot -->
+        <div class="current-offer">
+            <h3>Aktuelles Angebot</h3>
+            <p>Ich freue mich, dir 20 € Rabatt auf jedes Shooting anzubieten, wenn ich die Fotos auf meiner Webseite und in sozialen Medien verwenden darf (ohne Namensnennung). So kann ich mein Portfolio erweitern und gleichzeitig tolle Erinnerungen für dich festhalten!</p>
+            <p>Gültig bis: 31. Dezember 2024</p>
+        </div>
+
+        <ul class="offers">
+            <li>
+                <h3>Portraits & Pärchen</h3>
+                <p>Dauer: ca. 1 Stunde</p>
+                <p>Preis: 100 €</p>
+            </li>
+            <li>
+                <h3>Familienfotos</h3>
+                <p>Dauer: ca. 1,5 Stunden</p>
+                <p>Preis: 140 €</p>
+            </li>
+            <li>
+                <h3>Newborn & Kinder</h3>
+                <p>Dauer: ca. 1 Stunde</p>
+                <p>Preis: 80 €</p>
+            </li>
+            <li>
+                <h3>Vierbeiner</h3>
+                <p>Alles rund ums Tier, egal ob Hund, Katze, Pferd, Haus- und Hoftiere</p>
+                <p>Dauer: ca. 1 Stunde</p>
+                <p>Preis: 80 €</p>
+            </li>
+            <li>
+                <h3>Eventfotografie</h3>
+                <p>Dauer: 4 Stunden</p>
+                <p>Preis: 500 €</p>
+            </li>
+        </ul>
+        <p>Zusätzliche Kosten können für Anfahrtswege oder besondere Wünsche anfallen. Bitte kontaktiere mich für ein individuelles Angebot!</p>
+
+        <!-- Button -->
+        <div style="text-align: center;">
+            <a href="kontakt.html" class="button">Jetzt Termin Buchen</a>
+        </div>
+        
+        <!-- Zitat -->
+        <p class="quote">Erinnerungen sind die wahren Schätze</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Kontakt: <a href="mailto:lichtblickmoment@gmail.com">lichtblickmoment@gmail.com</a></p>
+        <p>© 2024 Licht.Blick.Moment. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>

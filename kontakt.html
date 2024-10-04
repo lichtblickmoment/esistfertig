@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licht.Blick.Moment - Kontakt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #FFFFFF;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: #31453C;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1.2em;
+            position: relative;
+            z-index: 1000;
+        }
+        .header h1 {
+            font-family: 'Mrs Saint Delafield', serif;
+            font-size: 4em;
+            margin-bottom: 0;
+        }
+        .header p {
+            font-size: 1em;
+            margin-top: 0;
+            line-height: 1.2em;
+        }
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 220px;
+            background-color: #31453C;
+            color: #FFFFFF;
+            height: 100vh;
+            padding-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1000;
+        }
+        .sidebar img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 40px 0;
+        }
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 15px 0;
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            padding: 5px;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .contact-section {
+            padding: 20px;
+            color: #31453C;
+            margin: 0 auto;
+            max-width: 800px;
+            text-align: center;
+            padding-right: 240px; /* Rechts genügend Platz für die Sidebar */
+        }
+        .contact-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3em;
+        }
+        .contact-section p {
+            font-size: 1.2em;
+        }
+        .contact-form {
+            margin-top: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        .contact-form button {
+            background-color: #31453C;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .footer {
+            background-color: #31453C;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Licht.Blick.Moment</h1>
+        <p>deine Geschichte - unsere Kunst</p>
+    </header>
+
+    <aside class="sidebar">
+        <img src="https://live.staticflickr.com/65535/54018002056_20964ebc8e_k.jpg" alt="Profilbild" />
+        <nav>
+            <a href="index.html">Startseite</a>
+            <a href="ueber-mich.html">Über Mich</a>
+            <a href="arbeitsweise.html">Meine Arbeitsweise</a>
+            <a href="portfolio.html">Mein Portfolio</a>
+            <a href="angebote-preise.html">Preise und Angebote</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </aside>
+
+ <!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <h2>Planen wir euren Moment</h2>
+    <p>Hast du Fragen oder möchtest du einen Termin vereinbaren? Dann sende mir eine unverbindliche Anfrage. Ich setze mich so bald wie möglich mit dir in Verbindung, um die nächsten Schritte zu besprechen.</p>
+    <p>Wenn du bereits konkrete Vorstellungen oder Wünsche hast, teile mir diese gerne mit. Um ein besseres Bild von dir und deinem Stil zu bekommen, wäre es hilfreich, wenn du dein Instagram-Profil verlinkst.</p>
+    <p>Für eine schnellere Abwicklung hinterlasse mir bitte auch deine Telefonnummer, so können wir auch mögliche Tippfehler bei E-Mail-Adressen vermeiden.</p>
+    <p class="email"><strong>Lichtblickmoment@gmail.com</strong></p>
+    <p>Ich freue mich darauf, von dir zu lesen!</p>
+
+
+       <!-- Contact Form -->
+<form class="contact-form" action="mailto:Lichtblickmoment@gmail.com?cc=Kainz.Katja@gmail.com" method="post" enctype="text/plain">
+    <label for="name">Name:<span style="color: red;">*</span></label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">E-Mail:<span style="color: red;">*</span></label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="phone">Telefonnummer:</label>
+    <input type="tel" id="phone" name="phone">
+    
+    <label for="message">Nachricht:<span style="color: red;">*</span></label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    
+    <label for="location">Von wo bist du?</label>
+    <input type="text" id="location" name="location">
+    
+    <label for="instagram">Dein Instagram Account:</label>
+    <input type="text" id="instagram" name="instagram">
+    
+    <button type="submit">Absenden</button>
+    <p class="privacy-notice">Beim Senden einer Nachricht stimmst du meinen allgemeinen Datenschutzrichtlinien zu. Ich nutze deine Daten nur zur Bearbeitung deiner Anfrage und gemäß den geltenden Datenschutzbestimmungen.</p>
+</form>
+
+
+        <!-- Social Media -->
+        <div class="social">
+            <p>Du kannst mir auch gerne auf Instagram eine Nachricht schicken:</p>
+            <a href="https://www.instagram.com/licht.blick.moment" target="_blank">Klicke einfach hier</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Licht.Blick.Moment. Alle Rechte vorbehalten.</p>
+        <p><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
+    </footer>
+</body>
+</html>
